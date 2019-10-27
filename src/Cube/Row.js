@@ -17,11 +17,17 @@ const Cell = styled.div`
   }
 `
 
-const Row = ({ data, handleMouseOver }) => {
+const Row = ({ data, handleMouseOver, handleCoordinatesSet, rowIndex }) => {
   return (
     <RowWrapper>
-      {data.map((number, i) => (
-        <Cell key={i} onMouseOver={handleMouseOver}>{number}</Cell>
+      {data.map(({ id, value }, colIndex) => (
+        <Cell key={id} onMouseOver={(e) => {
+          handleCoordinatesSet({
+            rowIndex,
+            colIndex
+          })
+          handleMouseOver(e)
+        }}>{value}</Cell>
       ))}
     </RowWrapper>
   )
