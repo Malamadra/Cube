@@ -1,0 +1,21 @@
+{
+  "presets": [
+    "react-app"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ]
+      }
+    ],
+    [
+      "ramda",
+      {
+        "useES": true
+      }
+    ]
+  ]
+}
