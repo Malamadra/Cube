@@ -2,11 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Row from './Row'
 
-const Wrapper = styled.div`
-  padding: 60px;
-  position: relative;
-`
-
 const Button = styled.div`
   position: absolute;
   width: 50px;
@@ -39,10 +34,19 @@ const RowDeleteButton = styled(Button)`
   display: none;
 `
 
-const RowsWrapper = styled.div`
+const RowsWrapper = styled.div``
+
+const Wrapper = styled.div`
+  padding: 60px;
+  position: relative;
+
   &:hover {
     ${RowDeleteButton} {
-    display: flex;
+      display: flex;
+    }
+    
+    ${ColDeleteButton} {
+      display: flex;
     }
   }
 `
